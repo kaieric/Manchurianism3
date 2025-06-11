@@ -13,12 +13,14 @@ public class GameState extends State {
 
     private Game game;
     private TileMap tileMap;
+    private Province provinceSelector;
     
     public GameState(Input input, Game game) {
         super(input);
         this.game = game;
         
         tileMap = new TileMap();
+        provinceSelector = null;
     }
 
     public void update() {
@@ -27,6 +29,10 @@ public class GameState extends State {
 
     public TileMap getTileMap() {
         return tileMap;
+    }
+
+    public void handleMouseHover() {
+        if (input.isMouseMoved)
     }
 
     

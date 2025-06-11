@@ -1,11 +1,10 @@
-package game;
+package tiles;
 import java.awt.*;
 import java.util.*;
 
 import display.Display;
 import entities.*;
 import controller.*;
-import tiles.TileMap;
 import utilities.*;
 
 public class TileInitializer {
@@ -28,6 +27,15 @@ public class TileInitializer {
     }
 
 
+    private static void initializePos(Tile[][] tileGrid) {
+        for (int row = 0; row < tileGrid.length; row++) {
+            for (int col = 0; col < tileGrid[row].length; col++) {
+                if (tileGrid[row][col] != null) {
+                    tileGrid[row][col].updatePos(new Position(col*30 + 50,row*30 + 50));
+                }
+            }
+        }
+    }
 
     private static void initializeRehe(Tile[][] tileGrid, HashMap<Province, ArrayList<Tile>> provinces) {
         tileGrid[19][4] = addToProvince(Province.REHE, provinces);

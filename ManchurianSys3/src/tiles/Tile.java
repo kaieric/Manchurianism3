@@ -1,17 +1,17 @@
-package entities;
+package tiles;
 import java.util.*;
 
-import gfx.Sprite;
+import entities.Pop;
 import utilities.*;
 
 
 public class Tile {   
     private Position gridPos; //stores not the rendered position but the relative position to other tiles in the 2d array. 0,0 being the top left.
+    PixelSprite pixelSprite;
+
     private String name; //optional?? possibly store references to these specifically in some city file or something for easy access? only some are for cities.
     
-    private String terrain; //Plains, Mountains, Hills, etcetera. Helps with animation.
-
-    private Sprite tileBase; //the bottom of the tile, most basic component
+    private Terrain terrain; //Plains, Mountains, Hills, etcetera. Helps with animation.
 
     private TreeSet<Pop> pops; //stores all of the pops located in this tile
     private double arableLand; //make a percentage or total? expands over time by a percent;
@@ -25,6 +25,14 @@ public class Tile {
 
     public Tile () {
         
+    }
+
+    public boolean contains(Position position) {
+        return pixelSprite.contains(position);
+    }
+
+    public void updatePos(Position pos) {
+        pixelSprite.updatePos(pos);
     }
 
 }

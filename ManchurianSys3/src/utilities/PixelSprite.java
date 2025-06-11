@@ -45,6 +45,15 @@ public class PixelSprite {
         this.position = pos;
     }
 
+    public boolean contains(Position pos) {
+        if (pos.getX() >= position.getX() - (width/2) && pos.getX() <= position.getX() + (width/2)
+        && pos.getY() >= position.getY() - (height/2) && pos.getY() <= position.getY() + (height/2)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
 
     /*

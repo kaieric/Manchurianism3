@@ -6,7 +6,7 @@ import java.awt.Graphics;
 import entities.*;
 import game.Game;
 import game.state.*;
-
+import tiles.Tile;
 import tiles.TileMap;
 
 public class Renderer {
@@ -33,7 +33,7 @@ public class Renderer {
                 if (tileGrid[row][col] != null) {
                     graphics.setColor(Color.RED);
 
-                    graphics.fillRect(col*30,row*30,25, 25);
+                    graphics.fillRect(col*30 + 50,row*30 + 50,20, 20);
                 }
             }
         }

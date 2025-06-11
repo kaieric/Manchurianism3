@@ -4,8 +4,6 @@ import utilities.*;
 
 import java.util.*;
 import entities.*;
-import entities.Tile;
-import game.TileInitializer;
 
 public class TileMap {
     private Tile[][] tileGrid;
